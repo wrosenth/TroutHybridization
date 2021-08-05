@@ -1,0 +1,4 @@
+plink --vcf ./../NFS19_parentage_0.9_0.15_filt.vcf --recode --allow-extra-chr --out NFS19_0.9_0.15_filt --double-id --set-missing-var-ids @.#
+plink --file NFS19_0.9_0.15_filt --geno 0.05 --maf 0.25 --indep 50 5 2 --out NFS19_0.95_0.25_ld --allow-extra-chr
+plink --file NFS19_0.9_0.15_filt --extract NFS19_0.95_0.25_ld.prune.in --out NFS19_0.95_0.25_ld --recodeA --allow-extra-chr
+plink --file NFS19_0.9_0.15_filt --extract NFS19_0.95_0.25_ld.prune.in --out NFS19_0.95_0.25_ld --make-bed --allow-extra-chr
